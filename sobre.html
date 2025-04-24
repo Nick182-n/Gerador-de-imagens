@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre o Projeto</title>
+  <link rel="stylesheet" href="estilos/estilo.css">
+  <link rel="stylesheet" href="estilos/responsivo.css">
+  <style>
+    .imagem-sobre {
+      width: 100%;
+      max-width: 400px; /* Diminuímos a largura máxima da imagem */
+      margin: 20px auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .proposito {
+      margin-bottom: 40px;
+    }
+
+    .membro {
+      background-color: #f9f9f9;
+      padding: 15px;
+      margin: 15px 0;
+      border-left: 5px solid #4CAF50;
+      border-radius: 5px;
+    }
+
+    .membro a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .membro a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .sobre-container {
+        padding: 10px;
+      }
+      .membro {
+        padding: 10px;
+      }
+      .imagem-sobre {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="cabecalho">
+    <h1>Sobre o Projeto</h1>
+    <nav class="navegacao">
+      <a href="index.html">Início</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="gerar.html">Gerar</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main class="sobre-container">
+
+    <section class="proposito">
+      <h2>Propósito do Projeto</h2>
+      <p>Este projeto foi desenvolvido com o objetivo de permitir que qualquer pessoa transforme ideias em imagens utilizando inteligência artificial. A plataforma é intuitiva, acessível e oferece uma forma divertida de experimentar a criatividade visual.</p>
+    </section>
+
+    <section class="imagem">
+      <!-- Imagem com o link fornecido -->
+      <img src="https://picsum.photos/400/300?random=13" alt="Imagem ilustrativa" class="imagem-sobre">
+    </section>
+
+    <section class="equipe">
+      <h2>Equipe de Desenvolvimento</h2>
+
+      <article class="membro">
+        <h3>Nícolas Vitor Gomes</h3>
+        <p>Desenvolvedor Front-end responsável pela estruturação HTML, estilização CSS e interações com JavaScript.</p>
+        <p>Entre em contato: <a href="mailto:nicolas@example.com">nicolas@exemplo.com</a></p>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nícolas Vitor Gomes. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

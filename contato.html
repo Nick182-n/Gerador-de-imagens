@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato</title>
+  <link rel="stylesheet" href="estilos/estilo.css">
+  <link rel="stylesheet" href="estilos/responsivo.css">
+  <style>
+    .contato-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      padding: 2rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .formulario-contato {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .formulario-contato h2 {
+      margin-bottom: 1rem;
+    }
+
+    .formulario-contato p {
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+
+    #form-contato {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .campo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .campo input,
+    .campo textarea {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .imagem-decorativa {
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    button.botao {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button.botao:hover {
+      background-color: #45a049;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    button.botao:active {
+      background-color: #3e8e41;
+      box-shadow: none;
+    }
+
+    @media (max-width: 768px) {
+      .contato-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .imagem-decorativa {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="cabecalho">
+    <h1>Contato</h1>
+    <nav class="navegacao">
+      <a href="index.html">Início</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="gerar.html">Gerar</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main class="contato-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/1250/1250620.png" alt="Ilustração contato" class="imagem-decorativa">
+
+    <section class="formulario-contato">
+      <h2>Entre em Contato</h2>
+      <p>Se você tiver dúvidas ou sugestões, fique à vontade para preencher o formulário abaixo. Responderei o mais breve possível!</p>
+
+      <form id="form-contato">
+        <div class="campo">
+          <label for="email" class="email-label">E-mail:</label>
+          <input type="email" id="email" placeholder="Seu e-mail" required>
+        </div>
+
+        <div class="campo">
+          <label for="mensagem" class="mensagem-label">Mensagem:</label>
+          <textarea id="mensagem" placeholder="Digite sua mensagem aqui..." rows="6" required></textarea>
+        </div>
+
+        <button type="submit" class="botao">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nícolas Vitor Gomes. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

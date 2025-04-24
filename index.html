@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Imagens</title>
+  <link rel="stylesheet" href="estilos/estilo.css">
+  <link rel="stylesheet" href="estilos/responsivo.css">
+  <style>
+
+    .galeria-tabela {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .galeria-tabela th, .galeria-tabela td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .galeria-tabela th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .galeria-tabela tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      margin: 5% auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header class="cabecalho">
+    <h1>Gerador de Imagens com IA</h1>
+    <nav class="navegacao">
+      <a href="index.html">Início</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="gerar.html">Gerar</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+  
+  <main class="galeria-container">
+    <h2>Imagens Geradas</h2>
+
+    <table class="galeria-tabela">
+      <thead>
+        <tr>
+          <th>Imagem Gerada</th>
+          <th>Descrição</th>
+          <th>Data de Criação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <img src="https://picsum.photos/400/300?random=1" alt="Imagem gerada de um gatinho fofo" class="galeria-img" onclick="openModal(this)" aria-label="Imagem de um gatinho fofo">
+          </td>
+          <td>Imagem de um gatinho fofo</td>
+          <td>21/04/2025</td>
+        </tr>
+        <tr>
+          <td>
+            <img src="https://picsum.photos/400/300?random=2" alt="Imagem gerada da natureza" class="galeria-img" onclick="openModal(this)" aria-label="Imagem aleatória da natureza">
+          </td>
+          <td>Imagem aleatória da natureza</td>
+          <td>19/04/2025</td>
+        </tr>
+        <tr>
+          <td>
+            <img src="https://picsum.photos/400/300?random=3" alt="Imagem gerada de uma paisagem urbana" class="galeria-img" onclick="openModal(this)" aria-label="Imagem de uma paisagem urbana">
+          </td>
+          <td>Imagem de uma paisagem urbana</td>
+          <td>18/04/2025</td>
+        </tr>
+        <tr>
+          <td>
+            <img src="https://picsum.photos/400/300?random=4" alt="Imagem gerada de uma praia tropical" class="galeria-img" onclick="openModal(this)" aria-label="Imagem de uma praia tropical">
+          </td>
+          <td>Imagem de uma praia tropical</td>
+          <td>17/04/2025</td>
+        </tr>
+        <tr>
+          <td>
+            <img src="https://picsum.photos/400/300?random=5" alt="Imagem gerada de uma montanha nevada" class="galeria-img" onclick="openModal(this)" aria-label="Imagem de uma montanha nevada">
+          </td>
+          <td>Imagem de uma montanha nevada</td>
+          <td>16/04/2025</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <div id="myModal" class="modal" aria-hidden="true">
+    <span class="close" onclick="closeModal()" aria-label="Fechar modal">&times;</span>
+    <img class="modal-content" id="imgModal" alt="Imagem ampliada">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Nícolas Vitor Gomes. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function openModal(imgElement) {
+      var modal = document.getElementById("myModal");
+      var modalImg = document.getElementById("imgModal");
+      modal.style.display = "block";
+      modalImg.src = imgElement.src;
+      modal.setAttribute("aria-hidden", "false");
+    }
+    function closeModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+      modal.setAttribute("aria-hidden", "true");
+    }
+  </script>
+
+</body>
+</html>

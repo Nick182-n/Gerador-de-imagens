@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Imagens</title>
+  <link rel="stylesheet" href="estilos/estilo.css">
+  <link rel="stylesheet" href="estilos/responsivo.css">
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .modal-content {
+      margin: 5% auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header class="cabecalho">
+    <h1>Galeria de Imagens</h1>
+    <nav class="navegacao">
+      <a href="index.html">Início</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="gerar.html">Gerar</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main class="galeria-container">
+    <h2>Imagens Geradas (Tabela)</h2>
+
+    <table class="galeria-tabela">
+      <thead>
+        <tr>
+          <th>Imagem Gerada</th>
+          <th>Descrição</th>
+          <th>Data de Criação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="https://picsum.photos/400/300?random=1" alt="Imagem gerada" class="galeria-img" onclick="openModal(this)"></td>
+          <td>Imagem de um gatinho fofo</td>
+          <td>21/04/2025</td>
+        </tr>
+        <tr>
+          <td><img src="https://picsum.photos/400/300?random=2" alt="Imagem gerada" class="galeria-img" onclick="openModal(this)"></td>
+          <td>Imagem aleatória da natureza</td>
+          <td>19/04/2025</td>
+        </tr>
+        <tr>
+          <td><img src="https://picsum.photos/400/300?random=3" alt="Imagem gerada" class="galeria-img" onclick="openModal(this)"></td>
+          <td>Paisagem urbana</td>
+          <td>18/04/2025</td>
+        </tr>
+        <tr>
+          <td><img src="https://picsum.photos/400/300?random=4" alt="Imagem gerada" class="galeria-img" onclick="openModal(this)"></td>
+          <td>Praia tropical</td>
+          <td>17/04/2025</td>
+        </tr>
+        <tr>
+          <td><img src="https://picsum.photos/400/300?random=5" alt="Imagem gerada" class="galeria-img" onclick="openModal(this)"></td>
+          <td>Montanha nevada</td>
+          <td>16/04/2025</td>
+        </tr>
+        <tr>
+          <td><img src="https://picsum.photos/400/300?random=6" alt="Imagem gerada" class="galeria-img" onclick="openModal(this)"></td>
+          <td>montanha de neve</td>
+          <td>15/04/2025</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 style="margin-top: 3rem;">Galeria Grid</h2>
+    <section class="galeria">
+      <div class="card">
+        <img src="https://picsum.photos/400/300?random=7" alt="Gatinho 1">
+        <p>Gatinho 1</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/300?random=8" alt="Gatinho 2">
+        <p>Gatinho 2</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/300?random=9" alt="Gatinho 3">
+        <p>Gatinho 3</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/300?random=10" alt="Gatinho 4">
+        <p>Gatinho 4</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/300?random=11" alt="Gatinho 5">
+        <p>Gatinho 5</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/300?random=12" alt="Gatinho 6">
+        <p>Gatinho 6</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="imgModal">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Nícolas Vitor Gomes. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function openModal(imgElement) {
+      var modal = document.getElementById("myModal");
+      var modalImg = document.getElementById("imgModal");
+      modal.style.display = "block";
+      modalImg.src = imgElement.src;
+    }
+
+    function closeModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+</html>
